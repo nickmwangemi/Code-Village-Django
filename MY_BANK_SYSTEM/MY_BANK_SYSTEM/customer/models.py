@@ -7,9 +7,9 @@ from account.models import Account
 class Customer(models.Model):
     name = models.CharField(max_length=200)
     idNo = models.CharField(max_length=200)
-    customerNo = models.IntegerField()
-    phoneNumber = models.IntegerField()
-    pin = models.IntegerField()
+    customerNo = models.CharField(max_length=200)
+    phoneNumber = models.CharField(max_length=200)
+    pin = models.CharField(max_length=10)
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
 
     class Meta:

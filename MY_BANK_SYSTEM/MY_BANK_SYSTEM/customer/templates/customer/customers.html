@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers</title>
+</head>
+<body>
+  
+  <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+ 
+  <table>
+    <thead><h1>List of Customers</h1></thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>ID No.</th>
+        <th>Customer No.</th>
+        <th>Phone Number</th>
+        <th>PIN</th>
+        <th>Account No.</th>
+      </tr>
+      <tr>
+        {% for cus in customers %}
+       <td> {{  cus.name }}</td>
+       <td> {{  cus.idNo }}</td>
+       <td> {{  cus.customerNo }}</td>
+       <td> {{  cus.phoneNumber }}</td>
+       <td> {{  cus.pin }}</td>
+       <td> {{  cus.account }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+  
+</body>
+</html>

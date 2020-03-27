@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'account',
     'currency',
     'customer',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
