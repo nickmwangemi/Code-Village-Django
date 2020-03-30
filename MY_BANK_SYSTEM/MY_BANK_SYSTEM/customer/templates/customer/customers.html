@@ -17,16 +17,14 @@
         <th>Customer No.</th>
         <th>Phone Number</th>
         <th>PIN</th>
-        <th>Account No.</th>
       </tr>
       <tr>
         {% for cus in customers %}
-       <td> {{  cus.name }}</td>
-       <td> {{  cus.idNo }}</td>
-       <td> {{  cus.customerNo }}</td>
-       <td> {{  cus.phoneNumber }}</td>
-       <td> {{  cus.pin }}</td>
-       <td> {{  cus.account }}</td>
+        <td> {{  cus.name }}</a> </td>
+        <td> {{  cus.idNo }}</td>
+        <td> {{  cus.customerNo }}</td>
+        <td> {{  cus.phoneNumber }}</td>
+        <td> {{  cus.pin }}</td>
       </tr>
       {% endfor %}
   </table>
