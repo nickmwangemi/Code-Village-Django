@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+</head>
+<body>
+  <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+  
+  <table>
+    <thead><h1>List of Students</h1></thead>
+      <tr>
+        <th>Name</th>
+        <th>Reg No</th>
+        <th>Address</th>
+        <th>Age</th>
+        <th>School</th>
+      </tr>
+      <tr>
+        {% for  student in students %}
+
+        {% comment %} <td><a href="{% url 'student_detail' pk=student.pk %}">{{ student.name }}</a></td> {% endcomment %}
+        <td> <a href="#">{{ student.name }} </a> </td>
+        <td> {{ student.registration_number }} </td>
+        <td> {{ student.address }} </td>
+        <td> {{ student.age }} </td>
+        <td> {{ student.school }} </td>
+      </tr>
+      {% endfor %}
+  </table>
+
+ 
+
+</body>
+</html>
