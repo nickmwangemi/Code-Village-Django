@@ -32,10 +32,10 @@ $ virtualenv env
 $ source env/bin/activate
 ```
 
-- Install django:
+- Install django and pymysql:
 
 ```
- $ pip install django
+ $ pip install django pymysql
 ```
 
 - Change directory into the root django project folder and runserver:
