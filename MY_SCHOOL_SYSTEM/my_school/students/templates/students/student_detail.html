@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+</head>
+<body>
+   {% comment %} <a href="{% url 'schools' %}">Back to School</a> {% endcomment %}
+  <h2>Student Details</h2>
+  <p>Student Name: {{ student.name }}</p>
+  <p>Reg No: {{ student.registration_number }}</p> 
+  <p>Address: {{ student.address }}</p> 
+  <p>Age: {{ student.age }}</p> 
+  <p>School: {{ student.school }}</p>
+  <hr>
+  <table>
+    <thead><h2> Report Form</h2></thead>
+      <tr>
+        <th>Subject Name</th>
+        <th>Score</th>
+        {% comment %} <th>Grade</th> {% endcomment %}
+      </tr>
+      <tr>
+        
+        <td> {{ subject.name }} </a> </td>
+        <td> {{ subject.score }} </td>
+        {% comment %} <td> {{ subject.score }} </td> {% endcomment %}
+      </tr>
+      
+  </table>
+  <br>
+  <p>Total Score:  </p>
+  <p>Mean Grade: </p>
+  
+
+
+
+</body>
+</html>

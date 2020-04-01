@@ -11,17 +11,15 @@
   <table>
     <thead><h1>List of Schools</h1></thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
-        <th>Code</th>
         <th>Address</th>
-        <th>No Of Students</th>
       </tr>
       <tr>
-        {% for  school in schools %}
-        <td> {{ school.name }}</td>
-        <td> {{ school.code }} </td>
+        {% for school in schools %}
+        <td> <a href="{% url 'school_detail' school.id %}">{{ school.id }}</a></td>
+        <td> {{ school.name }} </td>
         <td> {{ school.address }} </td>
-         <td> {{ school.no_of_students }} </td>
       </tr>
       {% endfor %}
   </table>
