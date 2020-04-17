@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Add A School</h1>
+          </div>
+
+        <form action="{% url 'schools:add' %}" method="post" name="fromSchool">
+            {% csrf_token %}
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" > 
+            <br>
+            <br>
+            <label for="name">Code: </label>
+            <input type="text" id="code" name="code"> 
+            <br>
+            <br>
+            <label for="name">Address: </label>
+            <input type="text" id="address" name="address"> 
+            <br>
+            <br>
+            <label for="name">No Of Students: </label>
+            <input type="number" id="name" name="no_of_students"> 
+            <br>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+        </main>
+      </div>
+    </div>
+
+    
+{% endblock %}
+
+
+

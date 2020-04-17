@@ -1,36 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Students</title>
-</head>
-<body>
-  {% comment %} <a href="{% url 'dashboard' %}">Back to Dashboard</a> {% endcomment %}
+{% extends 'base.html' %}
+
+{% block content %}
   
-  <table>
-    <thead><h1>List of Students</h1></thead>
-      <tr>
-        <th>Name</th>
-        <th>Reg No</th>
-        <th>Address</th>
-        <th>Age</th>
-        <th>School</th>
-      </tr>
-      <tr>
-        {% for  student in students %}
-
-        {% comment %} <td><a href="{% url 'student_detail' pk=student.pk %}">{{ student.name }}</a></td> {% endcomment %}
-        <td> <a href="#">{{ student.name }} </a> </td>
-        <td> {{ student.registration_number }} </td>
-        <td> {{ student.address }} </td>
-        <td> {{ student.age }} </td>
-        <td> {{ student.school }} </td>
-      </tr>
-      {% endfor %}
-  </table>
-
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">List of Students</h1>
+          </div>
+          <div class="table-responsive">
+           <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Reg No</th>
+              <th>Address</th>
+              <th>Age</th>
+              <th>School</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              {% for  student in students %}
+              <td><a href="{% url 'students:student_detail' student.id %}">{{ student.id }}</a></td>
+              <td> {{ student.name }} </td>
+              <td> {{ student.registration_number }} </td>
+              <td> {{ student.address }} </td>
+              <td> {{ student.age }} </td>
+              <td> {{ student.school }} </td>
+          </tr>
+        {% endfor %}
+		  </tbody>
+        </table>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+{% endblock  %}
  
 
-</body>
-</html>
+

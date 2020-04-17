@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Details</title>
+</head>
+<body>
+   <a href="{% url 'subjects:add' %}">Back to Add Subject</a>
+
+  <h2>Details of Subject You've Just Added</h2>
+  
+    <p>Name: {{ subject.name }}</p>
+    <p>Score: {{ subject.score }}</p> 
+    <p>Student Name: {{ subject.student }}</p> 
+    
+ 
+  <hr>
+  
+  
+
+
+
+</body>
+</html>

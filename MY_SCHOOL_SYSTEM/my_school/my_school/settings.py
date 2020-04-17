@@ -25,7 +25,7 @@ SECRET_KEY = 'qz0e=x2%@$)^i7u28z3^!-!hm297-(p#!nx-l5inmfm23e-00t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','38c2fd74.ngrok.io']
 
 
 # Application definition
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'my_school.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,3 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'my_school/static')
+]

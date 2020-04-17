@@ -1,40 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Details</title>
-</head>
-<body>
-   {% comment %} <a href="{% url 'schools' %}">Back to School</a> {% endcomment %}
-  <h2>Student Details</h2>
-  <p>Student Name: {{ student.name }}</p>
-  <p>Reg No: {{ student.registration_number }}</p> 
-  <p>Address: {{ student.address }}</p> 
-  <p>Age: {{ student.age }}</p> 
-  <p>School: {{ student.school }}</p>
-  <hr>
-  <table>
-    <thead><h2> Report Form</h2></thead>
-      <tr>
-        <th>Subject Name</th>
-        <th>Score</th>
-        {% comment %} <th>Grade</th> {% endcomment %}
-      </tr>
-      <tr>
-        
-        <td> {{ subject.name }} </a> </td>
-        <td> {{ subject.score }} </td>
-        {% comment %} <td> {{ subject.score }} </td> {% endcomment %}
-      </tr>
-      
-  </table>
-  <br>
-  <p>Total Score:  </p>
-  <p>Mean Grade: </p>
-  
+{% extends 'base.html' %}
+{% block content %}
 
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Student Details</h1>
+          </div>
+          <p>Name: {{ student.name }}</p>
+          <p>Reg No: {{ student.registration_number }}</p> 
+          <p>Address: {{ student.address }}</p> 
+          <p>Age: {{ student.age }}</p> 
+          <p>School: {{ student.school }}</p>
+          <hr>
 
-
-</body>
-</html>
+            <h1 class="h2">Report Form </h1>
+          <div class="table-responsive">
+           <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Score</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+             {% for subject in subjects  %}
+              <tr>
+                <td> {{ subject.name }} </a> </td>
+                <td> {{ subject.score }} </td>      
+            {% endfor %}
+            </tr>
+		  </tbody>
+        </table>
+        <br>
+        <p>Total Score:   {{ grade }}</p>
+        <p>Mean Grade: </p>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+{% endblock  %}
